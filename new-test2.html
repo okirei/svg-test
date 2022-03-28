@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" media="screen" href="style.css">
+    <script>
+        function showImage() {
+            document.getElementById("blur-white").setAttribute('class', 'pop-up-image visible');
+        }
+        function hideImage() {
+            document.getElementById("blur-white").setAttribute('class', 'pop-up-image');
+        }
+    </script>
 </head>
-<body>   
+<body>
+    <div id="blur-white" class="pop-up-image">
+        <div class="fullpage-close">
+            <img id="close-button-white" onclick="hideImage()" src="close-button-circular.png" alt="close">
+        </div>
+    </div>
     <nav class="mainnav">
         <ul class="topnav">
             <li class="menu-item">ABOUT</li>
@@ -20,18 +33,33 @@
                 </ul>
             </li>
             <li class="menu-item">REVIEWS</li>
+            <li class="top-right-icons">
+                <img class="icon-item" src="car-outline.png" alt="">
+                <img class="icon-item" src="heart-outline.png" alt="">
+                <img class="icon-item" src="profile-icon.png" alt="">
+                <img class="icon-item" src="reorder-three-outline.png" alt="">
+            </li>
         </ul>
       </nav>
     <main>
         <!-- <p id="text">Hello world!</p> -->
-        <span id="text">KALYE WINGS</span>
-        <div class="landing-page-images">
-            <img src="logo.jpg" alt="">
+        <div class="landing-page-top-section">
+            <img id="logo-png" src="logo-png.png" alt="logo">
+            <span id="text">KALYE WINGS</span>
         </div>
         <div class="landing-page-images">
-            <img src="kalyewings.jpg" alt="wings">
+            <img id="kalyewings-menu" onclick="showImage()" src="menu-img.jpg" alt="">
+            <img onclick="showImage()" src="logo.jpg" alt="">
+            <img onclick="showImage()" src="kalyewings.jpg" alt="packaging">
         </div>
     </main>
-
+    <nav class="secondary-nav">
+        <ul class="bottomnav">
+            <img class="icon-item-bottom" src="FB-logo.png" alt="">
+            <img class="icon-item-bottom" src="IG-logo.png" alt="">
+        </ul>
+        <div id="white-bg-header">
+        </div>   
+    </nav>
 </body>
 </html>
