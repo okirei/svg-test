@@ -17,7 +17,7 @@
    transition: all .1s ease;
 }
 #text:hover {
-    color: var(--primary-orange);
+    color: var(--secondary-red);
     font-family: header-font;
     font-size: 8rem;
     cursor: pointer;
@@ -64,7 +64,7 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 55px;
 }
-.mainnav .menu-item {
+.mainnav > .topnav > .menu-item {
     display: block;
     color: rgb(255, 255, 255);
     margin: 0px;
@@ -74,13 +74,24 @@ main {
     height: 100%;
     padding: 0px 24px;
 }
-.mainnav .menu-item:hover {
+.mainnav > .topnav > .menu-item:hover {
     color: var(--primary-red);
     background-color: var(--secondary-orange);
 }
 .dropdown {
     position: relative;
     display: inline-block;
+}
+@keyframes rotateMenu {
+    0% {
+        transform: rotateX(-90deg)
+    }
+    70% {
+        transform: rotateX(20deg) 
+    }
+    100% {
+        transform: rotateX(0deg) 
+    }
 }
 .dropdown-content {
     display: none;
@@ -91,6 +102,8 @@ main {
     border-radius: 15px !important;
     left: -55px;
     top: 60px;
+    animation: rotateMenu 400ms ease-in-out forwards;
+    transform-origin: top center;
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -109,15 +122,15 @@ main {
 }
 @font-face {
     font-family: header-font;
-    src: url(Knicknack-Regular.ttf);
+    src: url(fonts/Knicknack-Regular.ttf);
 }
 @font-face {
     font-family: subheader-font;
-    src: url(Gilroy-Bold.ttf);
+    src: url(fonts/Gilroy-Bold.ttf);
 }
 @font-face {
     font-family: regular-font;
-    src: url(Gilroy-Regular.ttf);
+    src: url(fonts/Gilroy-Regular.ttf);
 }
 /* .landing-page-images { */
     /* position: center; */
@@ -215,10 +228,15 @@ main {
     height: 40px;
     background-size: 160px;
     background-position: 0%;
+    transition: transform 0.05s ease;
+    -webkit-transition: transform 0.05s ease;
 }
 .FB-logo:hover {
     cursor: pointer;
     background-position: -40px;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+    -webkit-transition: transform 0.1s ease;
 /* .FB-logo:hover {
     background-image: url("FB-logo-hover.png");
     width: 40px;
@@ -232,10 +250,15 @@ main {
     height: 40px;
     background-size: 160px;
     background-position: 240px;
+    transition: transform 0.05s ease;
+    -webkit-transition: transform 0.05s ease;
 }
 .IG-logo:hover {
     cursor: pointer;
     background-position: 40px;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+    -webkit-transition: transform 0.1s ease;
 }
 .bottom-socmed-icons > .icon-item-bottom {
     margin: 10px 24px;
@@ -322,4 +345,14 @@ main {
     transform: scale(1.2) rotate(90deg);
     transition: transform 0.5s ease;
     -webkit-transition: transform 0.5s ease;
+}
+#text-test {
+    font-size: 72px;
+    color: white;
+    font-family: header-font;
+    letter-spacing: 20px;
+}
+.scroll-text {
+    color: var(--primary-orange) !important;
+    transition: all 1s ease;
 }
